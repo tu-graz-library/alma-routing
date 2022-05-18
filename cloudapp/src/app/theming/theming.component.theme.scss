@@ -1,0 +1,29 @@
+@mixin theming-component-theme($theme, $typography) {
+    
+    .themed-button{
+      //background-color: white;
+      border-color: whitesmoke;
+      //color: whitesmoke;
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    //transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      
+}
+.themed-button:hover{
+  background-color: mat-color(map-get($theme, primary));
+  border-color: mat-color(map-get($theme, primary));
+  color: whitesmoke;
+}
+
+  }

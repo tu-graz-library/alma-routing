@@ -1,5 +1,73 @@
-<section>
+<ng-template #error_msg>
+  <h1 translate>Translate.ConfigureFirst</h1>
+  <a translate [routerLink]="['settings']">Translate.ToSettings</a>
+</ng-template>
+<ng-template #loading_spinner>
+  <div class="loading-shade">
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  </div>
+</ng-template>
+<ng-template #user_block>
+  <h1 translate>Translate.UserBlock</h1>
+
+  <button translate color="primary" (click)="skipUser(true)" type="button" name="yes" class="themed-button">Translate.Yes</button>&nbsp;
+  <button translate color="primary" (click)="skipUser(no)" type="button" name="no" class="themed-button">Translate.No</button>
+</ng-template>
+<div *ngIf="!loadingSettings; else error_msg">
+  
+<!--<section>
   <h1>
-    Alma Routing
+    Welcome!
   </h1>
+  <p>Use this sample app to get you started. The app includes the following:</p>
+  <ul>
+    <li>Listener for the <code>onPageLoad</code> event</li>
+    <li>Performs an API call using the <code>restService</code> service</li>
+    <li>Updates the object using the <code>restService</code> service</li>
+    <li>Refreshes the page in Alma</li>
+  </ul>
+  <p>Use these building blocks to be on your way to developing your own CloudApp.</p>
+</section>-->
+<!--
+<section>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Page Entity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <pre>{{ pageEntities | json }}</pre>
+    </mat-card-content>
+  </mat-card>
 </section>
+-->
+<!--<section>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>API Result</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <textarea #apiResultArea [value]="apiResult | json"></textarea>
+    </mat-card-content>-->
+    <!--
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="update(apiResultArea.value)"
+        [disabled]="!hasApiResult || loading">Update</button>
+    </mat-card-actions>-->
+  <!--</mat-card>
+</section>-->
+<div *ngIf="!userBlock; else user_block">
+<section>
+<mat-form-field>
+  <mat-label>{{ 'Translate.EnterBarcode' | translate }}</mat-label>
+  <input translate matInput [(ngModel)]="barcode" >
+</mat-form-field>
+<br/>
+<button translate color="primary" (click)="getInterestUser(barcode)" type="button" name="button" class="themed-button">Translate.Loan</button>
+</section>
+
+<!--
+<a [routerLink]="['print']">Print</a><br/>
+
+<router-outlet name="print"></router-outlet>-->
+</div>
+</div>
