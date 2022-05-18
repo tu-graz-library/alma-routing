@@ -1,5 +1,10 @@
 {
-   "id": "alma-routing",
-   "title": "alma routing",
-   "description": "alma routing"
+   "id": "routing-app",
+   "title": "Routing CloudApp",
+   "subtitle": "routing",
+   "author": "TUG",
+   "description": "This App makes loans on next interested user",
+   "pages": {
+      "settings": "/#/settings"
+   }
 }
