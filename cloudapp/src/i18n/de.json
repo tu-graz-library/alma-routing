@@ -1,0 +1,21 @@
+{	
+	"Translate": {
+		"ConfigureFirst": "Bitte konfigurieren Sie zuerst die App.",
+		"ToSettings": ">> Zu den Einstellungen",
+		"Settings": "Einstellungen",
+		"Back": "Zurück",
+		"Restore": "Löschen",
+		"Save": "Speichern",
+		"Library": "Bibliothek",
+		"CircDesk": "Leihstelle",
+		"EndRouting": "Routing Ende! <br/> Keine interesierte Benutzer mehr!<br/>Wiedereinstellen in: <b>",
+		"GetUserFailed": "Benutzer konnte nicht geladen werden!",
+		"BarcodeInvalid": "Ungültiger Barcode!",
+		"Loan": "Entlehnen",
+		"EnterBarcode": "Barcode eingeben",
+		"DueDate": "Fällig am:",
+		"UserBlock": "Benutzer überspringen?",
+		"Yes": "Ja",
+		"No": "Nein"
+	}
+}

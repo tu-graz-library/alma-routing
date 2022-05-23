@@ -1,0 +1,87 @@
+
+<!--<ng-template #loading_spinner>
+    <div class="loading-shade">
+      <mat-progress-spinner
+        mode="indeterminate"
+        diameter="50"
+      ></mat-progress-spinner>
+    </div>
+  </ng-template>-->
+  
+  <div class="loading-shade" *ngIf="saving">
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  </div>
+  <!--<div class="loading-shade" *ngIf="saving">
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  </div>-->
+  <div *ngIf="form">
+  <section>
+    <form [formGroup]="form" >
+      <div class="eca-actions">
+        <a [routerLink]="['']" style="float: right">
+          <button mat-flat-button color="secondary">
+            <mat-icon>arrow_back</mat-icon>Back
+          </button>
+        </a>
+        <button
+          mat-flat-button
+          color="secondary"
+          type="button"
+          (click)="onRestore()"
+          style="margin-left: 4px"
+        >
+          Restore Defaults
+        </button>
+        <div buttons>
+          <button mat-flat-button type="button" color="primary" (click)="save()" [disabled]="!(form?.dirty)">Save</button>
+        </div>
+        <!--
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="!form.valid"
+        >
+          Save
+        </button>-->
+      </div>
+  
+      <h1>Settings</h1>
+      
+      <mat-form-field>
+        <mat-label>Library</mat-label>
+        <input
+          matInput
+          type="text"
+          ngModel
+          formControlName="library"
+          required
+          #library
+          
+        />
+          
+      </mat-form-field>
+      
+      
+        <mat-form-field>
+          <mat-label>Circulation desk</mat-label>
+          <input
+            matInput
+            type="text"
+            ngModel
+            formControlName="circDesk"
+            required
+            #circDesk
+           
+            
+          />
+        </mat-form-field>
+    
+      
+      
+      <br /><br /><br />
+      
+    </form>
+    <pre>{{ form.value | json }}</pre>
+  </section>
+  </div>

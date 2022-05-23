@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "include": ["cloudapp/src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "**/flycheck*"]
+}

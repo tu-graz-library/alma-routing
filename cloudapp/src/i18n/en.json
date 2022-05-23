@@ -1,0 +1,22 @@
+{	
+	"Translate": {
+		"ConfigureFirst": "translate: This app needs to be configured first",
+		"ToSettings": ">> To Settings",
+		"Settings": "Settings",
+		"Back": "Back",
+		"Restore": "Clear",
+		"Save": "Save",
+		"Library": "Library",
+		"CircDesc": "Circulation Desk",
+		"EndRouting": "End of Routing! <br/>No interested User more!<br/>Reshelve to: <b>",
+		"GetUserFailed": "Failed to load User!",
+		"BarcodeInvalid": "Barcode is invalid!",
+		"Loan": "Loan on interested User",
+		"EnterBarcode": "Enter Barcode",
+		"DueDate": "Due Date:",
+		"UserBlock": "Skip user?",
+		"Yes": "Yes",
+		"No": "No"
+		
+	}
+}
