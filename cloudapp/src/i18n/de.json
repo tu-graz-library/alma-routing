@@ -6,16 +6,23 @@
 		"Back": "Zurück",
 		"Restore": "Löschen",
 		"Save": "Speichern",
-		"Library": "Bibliothek",
-		"CircDesk": "Leihstelle",
+		"Library": "Bibliothek: ",
+		"CircDesk": "Leihstelle: ",
 		"EndRouting": "Routing Ende! <br/> Keine interesierte Benutzer mehr!<br/>Wiedereinstellen in: <b>",
 		"GetUserFailed": "Benutzer konnte nicht geladen werden!",
 		"BarcodeInvalid": "Ungültiger Barcode!",
 		"Loan": "Entlehnen",
 		"EnterBarcode": "Barcode eingeben",
-		"DueDate": "Fällig am:",
+		"DueDate": "Fällig am: ",
 		"UserBlock": "Benutzer überspringen?",
 		"Yes": "Ja",
-		"No": "Nein"
+		"No": "Nein",
+		"NoInterestedUser": "Die Bestellung hat keinen intersierten Benutzer!",
+		"InProcessItem": "Exemplar ist in Process! Entlehnung nicht möglich!",
+		"NoSkipUser": "Routing wurde unterbrochen. Exemplar ist nicht entlehnt.",
+		"FailGetPOLine": "Fehler beim Laden der PO Line!",
+		"SkipUserBehaviour": "Benutzer mit Sperre automatisch überspringen",
+		"UserSkiped": "Benutzer übersprüngen. Exemplar wird an nächsten Benutzer entlehnt.",
+		"InformUser": "Folgendes Exemplar wurde an Sie entlehnt:"
 	}
 }

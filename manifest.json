@@ -1,10 +1,20 @@
 {
    "id": "routing-app",
-   "title": "Routing CloudApp",
-   "subtitle": "routing",
+   "title": "Item Routing (Beta)",
+   "subtitle": "Loan Item on first or next interested user",
    "author": "TUG",
-   "description": "This App makes loans on next interested user",
+   "description": "This Cloud App makes loans on first or next interested user listed in order line. Requirements: 'Notify upon cancellation' is checked in order line by interested user, user has following roles: Circulation Desk Operator, Purchasing Operator",
+   "icon": {
+      "type": "url",
+      "value": "/assets/routing_logo.png"
+   },
    "pages": {
       "settings": "/#/settings"
+   },
+   "contentSecurity": {
+      "connectSrc": [],
+      "sandbox": {
+         "popups": true
+      }
    }
 }

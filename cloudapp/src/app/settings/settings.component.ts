@@ -39,12 +39,10 @@ export class SettingsComponent implements OnInit {
       
     });
 
-    
   }
 
   save() {
-    this.saving = true;
-    this.settingsService.set(this.form.value).subscribe(
+     this.settingsService.set(this.form.value).subscribe(
       response => {
         this.alert.success('Settings successfully saved.');
         this.form.markAsPristine();
@@ -52,6 +50,7 @@ export class SettingsComponent implements OnInit {
       err => this.alert.error(err.message),
       ()  => this.saving = false
     );
+    
   }
 
   onRestore() {
@@ -59,6 +58,7 @@ export class SettingsComponent implements OnInit {
       response => {
         this.alert.success('Default settings restored.');
         this.form.markAsPristine();
+        this.form.reset();
       },
       err => this.alert.error(err.message),
       ()  => this.saving = false
