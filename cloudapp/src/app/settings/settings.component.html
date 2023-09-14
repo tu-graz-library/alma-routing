@@ -33,7 +33,7 @@
         {{ 'Translate.Restore' | translate }}
         </button>
         <div buttons>
-          <button mat-flat-button type="button" color="primary" (click)="save()" [disabled]="!(form?.dirty)">{{ 'Translate.Save' | translate }}</button>
+          <button mat-flat-button type="button" color="primary" (click)="save()" [disabled]="!(form?.dirty)||(form?.invalid)">{{ 'Translate.Save' | translate }}</button>
         </div>
         <!--
         <button
@@ -54,6 +54,7 @@
           matInput
           type="text"
           formControlName="library"
+          minlength="1"
           required
           #library
           
@@ -69,13 +70,22 @@
             type="text"
             formControlName="circDesk"
             required
+            minlength="1"
             #circDesk
            
             
           />
+          
         </mat-form-field>
+        <mat-checkbox labelPosition="after" formControlName="autoSkipUser" #autoSkipUser>{{ 'Translate.SkipUserBehaviour' | translate }}
+</mat-checkbox>
     
-      
+        <div *ngIf="circDesk.invalid && (circDesk.dirty || circDesk.touched)">
+
+          <div *ngIf="circDesk.errors.required">
+            Name is required.
+          </div>
+          </div>  
       
       <br /><br /><br />
       

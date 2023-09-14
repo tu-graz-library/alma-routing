@@ -1,22 +1,29 @@
 {	
 	"Translate": {
-		"ConfigureFirst": "translate: This app needs to be configured first",
+		"ConfigureFirst": "This app needs to be configured first",
 		"ToSettings": ">> To Settings",
 		"Settings": "Settings",
 		"Back": "Back",
 		"Restore": "Clear",
 		"Save": "Save",
-		"Library": "Library",
-		"CircDesc": "Circulation Desk",
+		"Library": "Library: ",
+		"CircDesk": "Circulation Desk: ",
 		"EndRouting": "End of Routing! <br/>No interested User more!<br/>Reshelve to: <b>",
 		"GetUserFailed": "Failed to load User!",
 		"BarcodeInvalid": "Barcode is invalid!",
 		"Loan": "Loan on interested User",
 		"EnterBarcode": "Enter Barcode",
-		"DueDate": "Due Date:",
+		"DueDate": "Due Date: ",
 		"UserBlock": "Skip user?",
 		"Yes": "Yes",
-		"No": "No"
+		"No": "No",
+		"NoInterestedUser": "Order has no interested user!",
+		"InProcessItem": "Item in process! Loan can't be performed!",
+		"NoSkipUser": "User skipped. Loan wasn't performed!",
+		"FailGetPOLine": "Failed to get PO Line!",
+		"SkipUserBehaviour": "Skip user with block automatically",
+		"UserSkiped": "User skipped. Loan on next user will be performed.",
+		"InformUser": "Following item has been loaned to you:"
 		
 	}
 }

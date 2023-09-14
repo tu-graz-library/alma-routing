@@ -19,7 +19,7 @@ describe('TranslateComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create translate', () => {
     expect(component).toBeTruthy();
   });
 });
