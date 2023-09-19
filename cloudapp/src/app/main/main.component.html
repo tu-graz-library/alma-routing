@@ -12,7 +12,7 @@
 <ng-template #show_Skip>
   <h1 translate>Translate.UserBlock</h1>
   <button translate color="primary" (click)="skipUser(true)" type="button" name="yes" class="themed-button">Translate.Yes</button>&nbsp;
-  <button translate color="primary" (click)="skipUser(no)" type="button" name="no" class="themed-button">Translate.No</button>
+  <button translate color="primary" (click)="skipUser(false)" type="button" name="no" class="themed-button">Translate.No</button>
 </ng-template>
 
 <div *ngIf="!loadingSettings; else error_msg">
