@@ -139,7 +139,7 @@ export class MainComponent implements OnInit, OnDestroy {
   
   }
 
-  private getInterestUser(barcode: string){
+  getInterestUser(barcode: string){
     this.loading=true;
     this.user.id = "";
     this.getItem(barcode);
@@ -342,22 +342,30 @@ export class MainComponent implements OnInit, OnDestroy {
           this.showSkip = true;
           this.loading = false;
           console.error(e);
-          this.skipUser(this.settings.autoSkipUser);
+          this.skipUsers(this.settings.autoSkipUser);
         }
       });
     
 
   }
+  
+  skipUsers(skipU : boolean){
+    if (skipU) this.skipUser(true);
+    else this.showSkip = true;
+  }
 
   skipUser(skip : boolean){
     this.showSkip = false;
     if(skip) {
-      this.makeNextLoan(this.intUsers,this.user.id);
+      this.showSkip = false;
       this.alert.warn(this.translate.instant('Translate.UserSkiped'));
+      this.makeNextLoan(this.intUsers,this.user.id);
     }
     else {
-        this.alert.info(this.translate.instant('Translate.NoSkipUser'));
+      this.showSkip = false;
+      this.alert.info(this.translate.instant('Translate.NoSkipUser'));
     }
+    this.barcode = "";
     this.loading = false;
   }
   lgbtnclick(){
