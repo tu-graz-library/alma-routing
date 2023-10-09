@@ -3,7 +3,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   CloudAppRestService, CloudAppEventsService, Request, HttpMethod,
   PageInfo, RestErrorResponse, AlertService,
-  CloudAppSettingsService
+  CloudAppSettingsService,
+  Alert
 } from '@exlibris/exl-cloudapp-angular-lib';
 import { Settings } from '../models/settings';
 import { User } from '../models/user.model';
@@ -143,6 +144,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.loading=true;
     this.user.id = "";
     this.getItem(barcode);
+    this.alert.clear();
   }
 
   private getPoLine(poLine: string) {
@@ -177,12 +179,12 @@ export class MainComponent implements OnInit, OnDestroy {
           this.alert.error (this.translate.instant('Translate.NoInterestedUser'));
           this.loading = false;
         } else { 
-          this.alert.error (this.translate.instant('InProcessItem'));
+          this.alert.error (this.translate.instant('Translate.InProcessItem'));
           this.loading = false;
        }
       },
       error: (e: RestErrorResponse) => {
-        this.alert.error(e.message + this.translate.instant('FailGetPOLine'));
+        this.alert.error(e.message + this.translate.instant('Translate.FailGetPOLine'));
         console.error(e);
         this.loading = false;
       }
@@ -194,6 +196,8 @@ export class MainComponent implements OnInit, OnDestroy {
     
     let urle = "/bibs/"+this.mms+"/holdings/"+this.holdingID+"/items/"+this.pid+"/loans";
     let activeUser = "";
+
+
     let request: Request = {
       url: urle,
       method: HttpMethod.GET
@@ -237,12 +241,13 @@ export class MainComponent implements OnInit, OnDestroy {
     
   }
 
+  /* nicht nötig
   private extractData(res: Response) {
     let body = res.json();
     // return just the response, or an empty array if there's no data
     return body || []; 
   }
-
+*/
   private makeNextLoan(value: any, activeUser){
     let inusers = value;
     let actUser = activeUser;
@@ -259,7 +264,7 @@ export class MainComponent implements OnInit, OnDestroy {
     if ((this.user.id != "")&&(this.user.id != activeUser)) this.getFullUser(this.user);
     else{
       this.barcode = "";
-      this.alert.warn(this.translate.instant('Translate.EndRouting') + this.itemLibrary+' - ' + this.itemLocation+"</b>");
+      this.alert.info(this.translate.instant('Translate.EndRouting') + this.itemLibrary+' - ' + this.itemLocation+"</b>");
       this.loading = false;
     }
   }
@@ -358,7 +363,7 @@ export class MainComponent implements OnInit, OnDestroy {
     this.showSkip = false;
     if(skip) {
       this.showSkip = false;
-      this.alert.warn(this.translate.instant('Translate.UserSkiped'));
+      this.alert.info(this.translate.instant('Translate.UserSkiped'));
       this.makeNextLoan(this.intUsers,this.user.id);
     }
     else {
